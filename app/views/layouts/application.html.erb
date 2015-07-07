@@ -19,6 +19,10 @@
     <div class="navbar-header">
       <%= link_to 'Brainstorming', publications_path, class: 'navbar-brand' %>
     </div>
+    <form>
+     <input name="q" <%= @q %> >
+     <button type="submit">Buscar</button>
+    </form>
 	  <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'New Publication', new_publication_path, class: 'btn btn-success', role: 'button' %></li>
           </ul>

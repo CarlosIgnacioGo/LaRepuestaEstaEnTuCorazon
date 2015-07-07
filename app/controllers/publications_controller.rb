@@ -4,7 +4,12 @@ class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.json
   def index
-    @publications = Publication.all.order(created_at: :desc)
+    @q = params[:q]
+    if @q
+      @publications = Publication.where("title like ?", "%#{@q}%")
+    else
+      @publications = Publication.all.order(created_at: :desc)
+    end
   end
 
   # GET /publications/1
@@ -16,6 +21,7 @@ class PublicationsController < ApplicationController
   # GET /publications/new
   def new
     @publication = Publication.new
+    @q = params[:q]
   end
 
   # GET /publications/1/edit

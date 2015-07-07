@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="img_publication">
+	
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @publication.title %>
-</p>
+<div class="wrapper-text-publication">
+	<h2><%= @publication.title %></h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @publication.description %>
-</p>
+	<div>
+	  <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+	  <%= @publication.visits_count %>
+	</div>
 
-<p>
-  <strong>Visits count:</strong>
-  <%= @publication.visits_count %>
-</p>
+	<p>
+	  <%= @publication.description %>
+	</p>
+
+
+</div>
+
 

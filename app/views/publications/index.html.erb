@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Ultimas ideas</h1>
+<% if @q %>
+	<p>Resultados de busqueda de "<%= @q %>"</p>
+<% end %>
 
 <% @publications.each do |publication| %>
   <div class="wrapper-publication">
     <h3><%= link_to publication.title, publication %></h3>
-    <td><%= publication.visits_count %></td>
     <td><%= publication.created_at.strftime("Publicado el día %d/%m/%Y a las %T %p") %></td>
     <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
     <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
