@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /publications
   # GET /publications.json
@@ -21,7 +22,6 @@ class PublicationsController < ApplicationController
   # GET /publications/new
   def new
     @publication = Publication.new
-    @q = params[:q]
   end
 
   # GET /publications/1/edit
